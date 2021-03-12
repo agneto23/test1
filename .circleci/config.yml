@@ -38,8 +38,9 @@ workflows:
       - build:
           filters:
             branches:
-              - develop
-              - main
+              only:
+                - develop
+                - main
       - deploy:
           requires:
             - build
