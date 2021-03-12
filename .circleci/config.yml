@@ -32,16 +32,16 @@ jobs:
           command: ./deployment.sh
 
 workflows:
-  version: 2
+  version: 2.1
   build:
     jobs:
-      - run-tests:
+      - build:
           filters:
             branches:
               only: main
       - deploy:
           requires:
-            - run-tests
+            - build
           filters:
             branches:
               only: main
