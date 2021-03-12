@@ -18,10 +18,12 @@ gcloud config set compute/zone us-central1-a
 
 gcloud --quiet container clusters get-credentials test-cluster
 
+gcloud auth configure-docker us-central1-docker.pkg.dev
+
 #docker build -t gcr.io/test-251421/test:$CIRCLE_SHA1 .
 docker build -t us-central1-docker.pkg.dev/winter-cogency-307316/test-registry/test:1.0.0 .
 
-gcloud docker -- push us-central1-docker.pkg.dev/winter-cogency-307316/test-registry/test:1.0.0
+docker push us-central1-docker.pkg.dev/winter-cogency-307316/test-registry/test:1.0.0
 
 #kubectl set image deployment/test test=gcr.io/test-251421/test:$CIRCLE_SHA1
 kubectl kubectl apply --validate=true -f admin/
