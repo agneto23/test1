@@ -9,7 +9,7 @@ describe("tests unit", function () {
 
     it("test", function (done) {
         const messageService = new MessageService();
-        expect(messageService.greetings("Juan Perez")).to.equal(200);
+        expect(messageService.greetings("Juan Perez").message).to.equal("Hello Juan Perez your message will be send");
         done();
     });
 
