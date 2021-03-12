@@ -26,6 +26,6 @@ docker build -t us-central1-docker.pkg.dev/winter-cogency-307316/test-registry/t
 docker push us-central1-docker.pkg.dev/winter-cogency-307316/test-registry/test:1.0.0
 
 #kubectl set image deployment/test test=gcr.io/test-251421/test:$CIRCLE_SHA1
-kubectl kubectl apply --validate=true -f admin/
+kubectl apply --validate=true -f admin/
 
 echo " Successfully deployed"
