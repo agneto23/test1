@@ -33,7 +33,7 @@ jobs:
 
 workflows:
   version: 2.1
-  build:
+  to_google:
     jobs:
       - test:
           filters:
