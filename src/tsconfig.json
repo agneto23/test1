@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "outDir": "../dist",
+    "baseUrl": "tsconfig",
+    "module": "commonjs"
+  },
+  "exclude": [
+    "../tests/",
+    "./node_modules/",
+    "./dist/"
+  ]
+}
