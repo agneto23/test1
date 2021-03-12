@@ -24,12 +24,13 @@ export class IndexController extends Controller {
     @Security("api_key")
     @Security("jwt")
     public async create(@Body() request: MessageVO) {
+        throw new Error("teeeeeeeeest")
         return this.messageService.greetings(request.to);
     }
 
     @Get('/token')
     public async token() {
-        return this.tokenService.generateAccessToken({username: `test`});
+        return this.tokenService.generateAccessToken({username: `user`});
     }
 
 }

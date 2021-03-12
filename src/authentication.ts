@@ -9,7 +9,6 @@ export function expressAuthentication(
     securityName: string,
     scopes?: string[]
 ): Promise<any> {
-    console.log("teeeeest: "+ JSON.stringify(request.headers))
     if (securityName === "api_key") {
         let token;
         if (request.headers && request.headers["x-parse-rest-api-key"]) {
@@ -52,21 +51,3 @@ export function expressAuthentication(
         });
     }
 }
-
-// import * as hapi from "@hapi/hapi";
-// export function hapiAuthentication(
-//     request: hapi.Request,
-//     securityName: string,
-//     scopes?: string[]
-// ): Promise<any> {
-//     return null
-// }
-//
-// import { Request } from "koa";
-// export function koaAuthentication(
-//     request: Request,
-//     securityName: string,
-//     scopes?: string[]
-// ): Promise<any> {
-//     return null
-// }

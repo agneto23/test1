@@ -6,6 +6,7 @@ import {RegisterRoutes} from "./routes/routes";
 import * as bodyParser from 'body-parser';
 
 export function newApp(): Express {
+
     const app = express();
 
     app.use(bodyParser.json());

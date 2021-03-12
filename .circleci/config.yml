@@ -1,7 +1,7 @@
 # Python CircleCI 2.0 configuration file
 version: 2.1
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:12.10
 
@@ -35,7 +35,7 @@ workflows:
   version: 2.1
   build:
     jobs:
-      - build:
+      - test:
           filters:
             branches:
               only:
@@ -43,7 +43,7 @@ workflows:
                 - main
       - deploy:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: main
